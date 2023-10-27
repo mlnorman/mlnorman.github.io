@@ -89,7 +89,6 @@ function detect(source) {
                 }
 
                 el.result.innerText = JSON.stringify(symbols, null, 2)
-                el.res.innerText = JSON.stringify(symbols, null, 2)
                 el.waitingTime.innerText = formatNumber(afterFunctionCalled - afterPreviousCallFinished)
                 el.drawImageTime.innerText = formatNumber(afterDrawImage - afterFunctionCalled)
                 el.getImageDataTime.innerText = formatNumber(afterGetImageData - afterDrawImage)
