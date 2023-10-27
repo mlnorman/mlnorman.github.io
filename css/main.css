@@ -17,7 +17,7 @@ label {
 
 img, video, #note, #timing {
     display: none;
-    max-width: 100%;
+    max-width: 80%;
 }
 
 #imgUrl {
