@@ -93,6 +93,7 @@ function detect(source) {
 
                 if (symbols.rawValue !== 'indefined' && symbols.rawValue !== '') {
                     // el.rawVal = "rawValue = " + symbols[0].rawValue;
+                    console.log(JSON.stringify(symbols, null, 2));
                 }
 
                 el.waitingTime.innerText = formatNumber(afterFunctionCalled - afterPreviousCallFinished)
