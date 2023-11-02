@@ -91,9 +91,13 @@ function detect(source) {
                 el.result.innerText = JSON.stringify(symbols, null, 2)
 
 
-                if (symbols.rawValue !== 'indefined' && symbols.length > 0 && symbols.rawValue !== '' ) {
-                    // el.rawVal = "rawValue = " + symbols[0].rawValue;
-                    console.log(symbols[0].rawValue);
+                if (symbols.rawValue !== 'indefined' && symbols.length > 0 && symbols.rawValue !== '') {
+                    if (parseInt(symbols[0].quality) > 50) {
+                        console.log(symbols[0].rawValue);
+                        alert(symbols[0].rawValue);
+                    }
+                    promise.resolve();
+                        
                 }
 
                 el.waitingTime.innerText = formatNumber(afterFunctionCalled - afterPreviousCallFinished)
