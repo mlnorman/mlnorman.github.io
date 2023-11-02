@@ -91,7 +91,7 @@ function detect(source) {
                 el.result.innerText = JSON.stringify(symbols, null, 2)
 
 
-                if (symbols.rawValue !== '') {
+                if (symbols.rawValue !== 'indefined' && symbols.rawValue !== '') {
                     el.rawVal = "rawValue = " + symbols.rawValue;
                 }
 
