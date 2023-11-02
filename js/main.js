@@ -92,7 +92,7 @@ function detect(source) {
 
 
                 if (symbols.rawValue !== 'indefined' && symbols.rawValue !== '') {
-                    el.rawVal = "rawValue = " + symbols[0].rawValue;
+                    // el.rawVal = "rawValue = " + symbols[0].rawValue;
                 }
 
                 el.waitingTime.innerText = formatNumber(afterFunctionCalled - afterPreviousCallFinished)
