@@ -90,6 +90,10 @@ function detect(source) {
 
                 el.result.innerText = JSON.stringify(symbols, null, 2)
 
+                if (symbols.rawValue !== '') {
+                    console.log(symbols.rawValue);
+                }
+
                 el.waitingTime.innerText = formatNumber(afterFunctionCalled - afterPreviousCallFinished)
                 el.drawImageTime.innerText = formatNumber(afterDrawImage - afterFunctionCalled)
                 el.getImageDataTime.innerText = formatNumber(afterGetImageData - afterDrawImage)
