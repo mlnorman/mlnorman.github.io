@@ -9,6 +9,7 @@ document
 let
     offCanvas,
     afterPreviousCallFinished,
+    barcodeResult = null,
     requestId = null;
 
 el.usingOffscreenCanvas.innerText = usingOffscreenCanvas ? 'yes' : 'no'
@@ -93,10 +94,8 @@ function detect(source) {
 
                 if (symbols.rawValue !== 'indefined' && symbols.length > 0 && symbols.rawValue !== '') {
                     if (parseInt(symbols[0].quality) > 50) {
-                        console.log(symbols[0].rawValue);
-                        alert(symbols[0].rawValue);
+                        barcodeResult = symbols[0].rawValue;
                     }
-                    promise.resolve();
                         
                 }
 
@@ -132,6 +131,10 @@ function detectImg() {
 
 
 function detectVideo(active) {
+    if (barcodeResult !== null) {
+        active = false;
+    }
+
     if (active) {
         detect(el.video)
             .then(() => requestId = requestAnimationFrame(() => detectVideo(true)))
@@ -139,6 +142,10 @@ function detectVideo(active) {
     } else {
         cancelAnimationFrame(requestId)
         requestId = null
+
+         if (barcodeResult !== null) {
+            alert(barcodeResult);
+         }
     }
 }
 
